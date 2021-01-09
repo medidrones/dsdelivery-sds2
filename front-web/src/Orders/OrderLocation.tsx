@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import AsyncSelect from 'react-select/async';
 import { fetchLocalMapBox } from '../api';
-import { OrderLocationdata } from './types';
+import { OrderLocationData } from './types';
 
 const initialPosition = {
   lat: -23.5274884,
@@ -15,11 +15,11 @@ type Place = {
   position: {
     lat: number;
     lng: number;
-  }
+  };
 }
 
 type Props = {
-  onChangeLocation: (location: OrderLocationdata) => void;
+  onChangeLocation: (location: OrderLocationData) => void;
 }
 
 function OrderLocation({ onChangeLocation }: Props) {
@@ -61,7 +61,7 @@ function OrderLocation({ onChangeLocation }: Props) {
         </h3>
         <div className="filter-container">
           <AsyncSelect
-            placeholder="Digite o endereço para entrega o pedido"
+            placeholder="Digite um endereço para entregar o pedido"
             className="filter"
             loadOptions={loadOptions}
             onChange={value => handleChangeSelect(value as Place)}
